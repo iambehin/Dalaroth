@@ -1,0 +1,5 @@
+<?php
+echo "You are travelling along a dirt road.\n";
+
+include "code/combat.php";
+?>

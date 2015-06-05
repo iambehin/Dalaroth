@@ -1,0 +1,1 @@
+This is a weapon shop ran by Marge.

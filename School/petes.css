@@ -1,0 +1,38 @@
+/* 
+    Document   : petes
+    Created on : Jan 18, 2014, 2:16:26 PM
+    Author     : Holly
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body{
+   background-color: black;
+}
+
+#canvas {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    background-color: whitesmoke;
+    color: darkblue; 
+    font-family: 'Comic Sans MS', sans-serif;
+}
+header {
+    text-align: center;
+}
+header h1{
+    margin-bottom: 5px;
+}
+header h3 {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+

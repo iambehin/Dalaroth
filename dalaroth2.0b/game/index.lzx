@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<canvas proxied="false" bgcolor="#200000" id="Canvas" title="Dalaroth" debug="true">
+<debug width="10%" height="10%" x="90%" y="90%" fontsize="14"></debug>
+
+<text visible="false" id="user">
+behin
+</text>
+
+       <script>
+    <![CDATA[
+    // write a word to the debugger
+    //
+    function sendData(action) {
+      var d=canvas.datasets.Data;       //grabs the data set
+      var p=new LzParam();                  //makes a new "array"
+      p.addValue("action", action, true);                   //sets the action for the php script to check.
+      p.addValue("user", user.getText(), true);               //begin setting data
+      p.addValue("text", EDITtext.getText(), true);
+      d.setQueryString(p);
+      d.doRequest();
+    }
+    ]]>
+  </script>
+
+                                                         
+
+<dataset name="Data" type="http" src="master.php" request="true" ></dataset>
+
+
+  <splash>
+    <view resource="banner.png"></view>
+  </splash>
+  <window resizable="true" id="StatsPane" bgcolor="maroon" x="0" y="0" height="80%" width="15%" opacity=".3" inset_bottom="0" inset_top="0" inset_right="0" inset_left="0" minwidth="150" minheight="300">
+    <view id="tabs" bgcolor="white" opacity=".25" layout="spacing: 10">
+      <text id="tab1" fgcolor="white" onclick="text1.animate('height', text1.height==0?200:0, 1000, false)">
+    Tab1</text>
+      <text id="tab2" fgcolor="white" x="${tab1.width + 1}" y="${tab1.y}" onclick="text2.animate('height', text2.height==0?200:0, 1000, false)"> 
+       Tab2    </text>
+      <text id="tab3" fgcolor="white" x="${tab1.width + 1 +tab2.width + 1}" y="${tab1.y}" onclick="text3.animate('height', text3.height==0?200:0, 1000, false)"> 
+       Tab3    </text>
+      <text id="tab4" fgcolor="white" x="${tab1.width + 1 + tab2.width + 1 +tab3.width + 1}" y="${tab1.y}" onclick="text4.animate('height', text4.height==0?200:0, 1000, false)"> 
+       Tab4    </text>
+    </view>
+    <!--   End of tabs  -->
+    <view id="tablets" bgcolor="blue" opacity=".3" y="${tabs.height + 2}" layout="spacing: 10">
+      <text id="text1" width="100%" height="0" multiline="true" fgcolor="white">
+     Information on Tab 1
+    </text>
+      <text id="text2" width="100%" height="0" multiline="true" fgcolor="white">
+     Information on Tab 2
+    </text>
+      <text id="text3" width="100%" height="0" multiline="true" fgcolor="white">
+     Information on Tab 3
+     </text>
+      <text id="text4" width="100%" height="0" multiline="true" fgcolor="white">
+     Information on Tab 4
+    </text>
+    </view>
+    <!--   End of tablets  -->
+  </window>
+  <!--    End of StatsPane   -->
+  <!--   This is the blurred edge  -->
+  <view id="StatsPaneEdge" x="${StatsPane.x + StatsPane.width}" y="${StatsPane.y}" width="1%" height="${StatsPane.height}" stretches="both" resource="gradientred.png" opacity="${StatsPane.opacity}"></view>
+
+
+
+  <window bgcolor="black" id="banner" x="15%" height="25%" width="35%" inset_bottom="0" inset_top="0" inset_right="0" inset_left="0" opacity=".01"></window>
+  <view x="${banner.x}" y="${banner.y}" resource="banner.png" id="bannerIMG" stretches="both" width="35%" height="20%">
+    <!--  This animator group makes the banner glow   -->
+    <animatorgroup name="blink" target="bannerIMG" process="sequential" duration="1000" start="true" repeat="Infinity">
+      <animator attribute="opacity" duration="500" to=".9"></animator>
+      <!--   Change to 90% opacity  -->
+      <animator attribute="opacity" duration="500" to=".6"></animator>
+      <!--   Change to 60% and repeat  -->
+    </animatorgroup>
+</view>
+<!--   end banner   -->
+
+<window resizable="true" id="ChatPane" bgcolor="lime" opacity=".2" y="0" x="50%" height="20%" width="45%" inset_bottom="0" inset_top="0" inset_right="0" inset_left="0" minwidth="300" minheight="50" >
+
+	  <edittext id="EDITtext" width="125"></edittext>      <button onclick="sendData('chat')">Chat!</button>  
+	<wrappinglayout axis="x"></wrappinglayout>
+
+	<view y="25" name="ChatOutput" width="100%" datapath="Data:/behin_db/chat/">
+
+<!--		<view name="ChatOutput" width="100%">         -->
+		<wrappinglayout axis="x"></wrappinglayout>   
+
+		<text datapath="time/text()" width="135"></text>
+<!--              <button width="80" x="200" y="10">Update 
+
+		<handler name="onclick">
+			parent.datapath.updateData();
+		</handler70%     </button>   -->
+		<text bgcolor="#333333" datapath="user/text()"></text>
+		<text>:</text>
+		<text datapath="text/text()" width="${ChatPane.width}" multiline="true"></text>
+	</view> 
+
+</window>   
+<!--   end ChatPane  -->
+
+<!--   These are the three blurred edges of the chat pane  -->
+<view x="${ChatPane.x}" y="${ChatPane.y + ChatPane.height}" opacity=".2" width="1%" height="${ChatPane.height}" rotation="180" stretches="both" resource="gradientgreen.png"></view>
+<!--   West Edge  -->
+<view x="${ChatPane.x + ChatPane.width}" y="${ChatPane.y}" opacity=".2" width="1%" height="${ChatPane.height}" stretches="both" resource="gradientgreen.png"></view>
+<!--    East Edge  -->
+<view x="${ChatPane.x}" y="${ChatPane.y+ ChatPane.height}" opacity=".2" width="${ChatPane.width}" height="1%" stretches="both" resource="gradient_vert_green.png"></view>
+<!--  South Edge -->
+
+<window bgcolor="black" id="CenterPane" x="15%" y="20%" resizable="true" height="60%" width="80%" opacity=".25" inset_bottom="0" inset_top="0" inset_right="0" inset_left="0" minwidth="300" minheight="300" fontsize="16" >
+	<view clip="true" width="90%" height="90%">
+		<wrappinglayout axis="x" />
+
+	<text fgcolor="red" height="50000">
+	This is where all the action takes place.
+	</text>
+	<view y="25" name="CenterOutput" width="100%" datapath="Data:/behin_db/" >
+		<wrappinglayout axis="x"/>
+		<text width="100%" multiline="true" fgcolor="white" datapath="center/text()" height="/>
+	</view>
+	<vscrollbar/>
+</view>
+</window>
+</canvas>

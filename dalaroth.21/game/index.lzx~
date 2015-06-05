@@ -1,0 +1,152 @@
+<canvas proxied="false" bgcolor="#200000" id="Canvas" title="Dalaroth" debug="true">
+<debug width="10%" height="10%" x="90%" y="90%" fontsize="14"></debug>
+
+<class name="mytext" extends="text">
+    <method name="setText" args="text">
+      <![CDATA[
+        var text = text.split("&lt;").join("<").split("&gt;").join(">").split("&apos;").join("'");
+        super.setText(text);
+      ]]>
+    </method>
+</class>
+
+
+
+       <script>
+    <![CDATA[
+    // write a word to the debugger
+    //
+    function sendData(action) {
+      var d=canvas.datasets.Data;       //grabs the data set
+      var p=new LzParam();                  //makes a new "array"
+      p.addValue("action", action, true);                   //sets the action for the php script to check.
+      p.addValue("text", EDITtext.getText(), true);
+      d.setQueryString(p);
+      d.doRequest();
+    }
+    function getData() {
+    	var d=canvas.datasets.Data; //grab the data set
+	d.setQueryString("refresh");  //sets a random query string
+	d.doRequest();  //get the stuff
+    }
+    ]]>
+  </script>
+
+                                                         
+
+<dataset name="Data" type="http" src="master.php" request="true" ></dataset>
+
+
+<splash>
+    <view resource="banner.png">
+    </view>
+  </splash>
+  <window resizable="true" id="StatsPane" bgcolor="maroon" x="0%" y="0%" height="90%" width="15%" opacity=".3" inset_bottom="0" inset_top="0" inset_right="0" inset_left="0" minwidth="150" minheight="300" datapath="Data:/behin_db/">
+    <view id="tabs" bgcolor="white" opacity=".25" layout="spacing: 10">
+      <text id="tab1" fgcolor="white" onclick="	text1.anim.doStart();text2.unanim.doStart()">
+    Character
+	</text>
+      <text id="tab2" fgcolor="white" x="${tab1.width + 1}" y="${tab1.y}" onclick="	text2.anim.doStart();text1.unanim.doStart()"> 
+       Array    </text>
+      <!--<text id="tab3" fgcolor="white" x="${tab1.width + 1 +tab2.width + 1}" y="${tab1.y}" onclick="text3.animate('height', text3.height==0?600:0, 1000, false)"> 
+       Tab3    </text>
+      <text id="tab4" fgcolor="white" x="${tab1.width + 1 + tab2.width + 1 +tab3.width + 1}" y="${tab1.y}" onclick="text4.animate('height', text4.height==0?600:0, 1000, false)"> 
+	      Tab4    </text>-->
+    </view>
+    <!--   End of tabs  -->
+
+	    <view resource="images/char.png" />
+    <view id="tablets" bgcolor="blue" opacity=".3" y="${tabs.height + 1}" width="100%" fontsize="12">
+      <view width="100%" id="text1" height="0" clip="true">
+	<animator name="anim" attribute="height" to="${StatsPane.height - tabs.height - 5}" duration="900" start="false" />
+	<animator name="unanim" attribute="height" to="0" duration="900" start="false" />
+	      <text width="${parent.width - parent.scroller.width}" multiline="true" fgcolor="white"  datapath="stat1/text()" />
+      <vscrollbar name="scroller" />
+      </view>
+
+      <view width="100%" id="text2" height="0" clip="true">
+	<animator name="anim" attribute="height" to="${StatsPane.height - tabs.height - 5}" duration="900" start="false" />
+	<animator name="unanim" attribute="height" to="0" duration="900" start="false" />
+	    <text width="${parent.width - parent.scroller.width}" multiline="true" fgcolor="white" datapath="stat2/text()" />
+      <vscrollbar name="scroller" />
+      </view>
+
+      <text id="text3" width="100%" height="0" multiline="true" fgcolor="white">
+     Information on Tab 3
+     </text>
+      <text id="text4" width="100%" height="0" multiline="true" fgcolor="white">
+     Information on Tab 4
+    </text>
+    </view>
+    <!--   End of tablets  -->
+  </window>
+  <!--    End of StatsPane   -->
+  <!--   This is the blurred edge  -->
+  <view id="StatsPaneEdge" x="${StatsPane.x + StatsPane.width}" y="${StatsPane.y}" width="1%" height="${StatsPane.height}" stretches="both" resource="gradientred.png" opacity="${StatsPane.opacity}"></view>
+
+
+
+  <window bgcolor="black" id="banner" x="${CenterPane.x*1.5}" y="${CenterPane.y*1.55}" height="25%" width="35%" inset_bottom="0" inset_top="0" inset_right="0" inset_left="0" opacity=".01"/>
+  <view x="${banner.x}" y="${banner.y}" resource="banner.png" id="bannerIMG" stretches="both" width="35%" height="20%">
+    <!--  This animator group makes the banner glow   -->
+    <animatorgroup name="blink" target="bannerIMG" process="sequential" duration="1000" start="true" repeat="Infinity">
+      <animator attribute="opacity" duration="500" to=".9"></animator>
+      <!--   Change to 90% opacity  -->
+      <animator attribute="opacity" duration="500" to=".6"></animator>
+      <!--   Change to 60% and repeat  -->
+    </animatorgroup>
+</view>
+<!--   end banner   -->
+
+<window resizable="true" id="ChatPane" bgcolor="lime" opacity=".2" y="0" x="15%" height="20%" width="${parent.width - NavPane.width - StatsPane.width}" inset_bottom="0" inset_top="0" inset_right="0" inset_left="0" minwidth="300" minheight="50" fontsize="16">
+<view width="100%">
+	<simplelayout axis="x" />
+	<edittext id="EDITtext" width="${parent.width - 50}" /><button width="50" onclick="sendData('chat')">Chat!</button>
+</view>
+	<view name="ChatOutput" height="${parent.height-30}" y="30"  width="100%" datapath="Data:/behin_db/" clip="true">
+		<text width="${parent.width - parent.scroller.width}" datapath="chat/text()" multiline="true" />
+		<vscrollbar name="scroller"/>
+	</view> 
+</window>   
+
+<!--   end ChatPane  -->
+
+<!--   These are the three blurred edges of the chat pane  -->
+<view x="${ChatPane.x}" y="${ChatPane.y + ChatPane.height}" opacity=".2" width="1%" height="${ChatPane.height}" rotation="180" stretches="both" resource="gradientgreen.png"></view>
+<!--   West Edge  -->
+<view x="${ChatPane.x + ChatPane.width}" y="${ChatPane.y}" opacity=".2" width="1%" height="${ChatPane.height}" stretches="both" resource="gradientgreen.png"></view>
+<!--    East Edge  -->
+<view x="${ChatPane.x}" y="${ChatPane.y + ChatPane.height}" opacity=".2" width="${ChatPane.width}" height="1%" stretches="both" resource="gradient_vert_green.png"></view>
+<!--  South Edge -->
+
+
+<window bgcolor="black" id="CenterPane" x="15%" y="20%" resizable="true" height="70%" width="85%" opacity=".5" inset_bottom="0" inset_top="0" inset_right="0" inset_left="0" minwidth="300" minheight="300" fontsize="16" >
+
+	<view clip="true" height="${parent.height}" id="CenterOutput" width="100%" datapath="Data:/behin_db/" >
+		<text selectable="true" multiline="true" width="${parent.width-parent.scroller.width}" fgcolor="white" datapath="center/text()" >
+		</text>
+		<vscrollbar id="Centerscroller" height="${parent.height - AttackButton.height}"/>
+		<button id="AttackButton" width="${parent.width}" y="${parent.x+parent.height-30}" onclick="sendData('Attack')" >
+			Attack!
+		</button>
+	</view> 
+</window>
+
+<window bgcolor="white" id="NavPane" x="${ChatPane.x+ChatPane.width}" y="0%" resizable="false" height="175" width="150" opacity=".25" inset_bottom="0" inset_top="0" inset_right="0" inset_left="0" fontsize="16" datapath="Data:/behin_db/">
+	
+	<text fgcolor="blue" bgcolor="red">
+	Navigation Panel	
+	</text>
+	<text fgcolor="red" bgcolor="green" y="25" x="100" width="45" datapath="x/text()" />
+	<text fgcolor="green" bgcolor="red" y="25" width="45" datapath="y/text()" />
+	<button y="50" width="50" height="25" onclick="sendData('northwest')" fontsize="12" datapath="Nwest/text()" />
+	<button x="50" y="25" width="50" height="50" onclick="sendData('north')" datapath="North/text()" />
+	<button x="100" y="50" width="50" height="25" onclick="sendData('northeast')" fontsize="12" datapath="Neast/text()" />
+	<button x="25" y="75" width="50" height="50" onclick="sendData('west')" datapath="West/text()" />
+	<button x="75" y="75" width="50" height="50" onclick="sendData('east')" datapath="East/text()" />
+	<button y="125" width="50" height="25" onclick="sendData('southwest')" fontsize="12" datapath="Swest/text()" />
+	<button x="50" y="125" width="50" height="50" onclick="sendData('south')" datapath="South/text()" />
+	<button x="100" y="125" width="50" height="25" onclick="sendData('southeast')" fontsize="12" datapath="Seast/text()" />
+	<button y="150" width="50" height="25" onclick="sendData('reset')">Reset</button>
+</window>
+</canvas>

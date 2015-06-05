@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+-
+- phpMyAdmin XML Dump
+- version 2.6.4-pl3
+- http://www.phpmyadmin.net
+-
+- Host: db1.awardspace.com
+- Generation Time: Mar 06, 2007 at 08:20 PM
+- Server version: 4.1.18
+- PHP Version: 4.4.1
+-->
+
+<!--
+- Database: `behin_db`
+-->
+<behin_db>
+  <!-- Table chat -->
+    <chat>
+        <time>Wed, Jan 17 22:28:10</time>
+        <text>What do you mean by breaks the address? Works fine for me....</text>
+        <user>Behin</user>
+        <number>50</number>
+    </chat>
+    <chat>
+        <time>Wed, Jan 17 13:04:29</time>
+        <text>the &amp;#039;restore again&amp;#039; button at gardens breaks the address</text>
+        <user>Kyle</user>
+        <number>48</number>
+    </chat>
+    <chat>
+        <time>Wed, Jan 9 22:22:46</time>
+        <text>But if anyone is playing, please post bugs here.</text>
+        <user>Behin</user>
+        <number>47</number>
+    </chat>
+    <chat>
+        <time>Wed, Jan 9 22:22:30</time>
+        <text>Host kicked us and I&amp;#039;ve had to restore from backup, not that anyone plays the game atm.</text>
+        <user>Behin</user>
+        <number>46</number>
+    </chat>
+    <chat>
+        <time>Thu, Sep 14 13:10:06</time>
+        <text>Thanks to everyone who&amp;#039;s helped out so far; I&amp;#039;ll soon start a new development cycle, had some irl stuff for the last few months, but hopefully some exciting things happening soon</text>
+        <user>Behin</user>
+        <number>45</number>
+    </chat>
+    <chat>
+        <time>Thu, Sep 14 13:09:04</time>
+        <text>Thanks to everyone who&amp;#039;s helped out so far; I&amp;#039;ll soon start a new development cycle, had some irl stuff for the last few months, but hopefully some exciting things happening soon</text>
+        <user>Behin</user>
+        <number>44</number>
+    </chat>
+    <chat>
+        <time>Thu, Sep 14 13:07:00</time>
+        <text>Thanks to everyone who&amp;#039;s helped out so far; I&amp;#039;ll soon start a new development cycle, had some irl stuff for the last few months, but hopefully some exciting things happening soon</text>
+        <user>Behin</user>
+        <number>43</number>
+    </chat>
+    <chat>
+        <time>Wed, May 10 11:15:20</time>
+        <text>Been silent around here lately, since I&amp;#039;ve been working on a new version, It&amp;#039;s still a bit from being implemented, but methinks you&amp;#039;re gonna like it.</text>
+        <user>Behin</user>
+        <number>42</number>
+    </chat>
+    <chat>
+        <time>Wed, May 8 7:39:45</time>
+        <text>wurr is everyon?</text>
+        <user>Test</user>
+        <number>41</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:29:16</time>
+        <text>Some of the minimap art is lacking, I know, but it works lol</text>
+        <user>Behin</user>
+        <number>39</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:22:06</time>
+        <text>just pushed over a beta of version .04</text>
+        <user>Behin</user>
+        <number>38</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:12:40</time>
+        <text>its like this, www.shilla.org</text>
+        <user>Behin</user>
+        <number>37</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:12:30</time>
+        <text>imma push over the new patch now, its not quite complete but u can see what changed</text>
+        <user>Behin</user>
+        <number>36</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:12:23</time>
+        <text>what is shilla?</text>
+        <user>Ithaxa</user>
+        <number>35</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:11:43</time>
+        <text>off*</text>
+        <user>Behin</user>
+        <number>34</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:11:35</time>
+        <text>this was more based of shilla though</text>
+        <user>Behin</user>
+        <number>33</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:11:27</time>
+        <text>yeah</text>
+        <user>Behin</user>
+        <number>32</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:11:10</time>
+        <text>have you ever played the murloc rpg?</text>
+        <user>Ithaxa</user>
+        <number>31</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:10:51</time>
+        <text>which dissapeared it seems</text>
+        <user>Behin</user>
+        <number>30</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:10:46</time>
+        <text>yeah i fixed that in .02b</text>
+        <user>Behin</user>
+        <number>29</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:10:39</time>
+        <text>lol</text>
+        <user>Behin</user>
+        <number>28</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:09:46</time>
+        <text>am i lvling with steroids?</text>
+        <user>Ithaxa</user>
+        <number>27</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:09:38</time>
+        <text>like i a gain lvls, but go down in str</text>
+        <user>Ithaxa</user>
+        <number>26</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:09:23</time>
+        <text>lol i am broken</text>
+        <user>Ithaxa</user>
+        <number>25</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:09:20</time>
+        <text>wewt</text>
+        <user>Behin</user>
+        <number>24</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:08:20</time>
+        <text>lol lvled up again</text>
+        <user>Ithaxa</user>
+        <number>23</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:08:18</time>
+        <text>You can still change background and colors in this version at least</text>
+        <user>Behin</user>
+        <number>22</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:07:52</time>
+        <text>All my hints I post in here &gt;.&lt; imma have to start backing up the chat too..gah</text>
+        <user>Behin</user>
+        <number>21</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:07:40</time>
+        <text>wtf you talking about willis?</text>
+        <user>Ithaxa</user>
+        <number>20</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:06:37</time>
+        <text>missing a week and a half of chat too =/</text>
+        <user>Behin</user>
+        <number>19</number>
+    </chat>
+    <chat>
+        <time>Tue, Apr 25 11:06:19</time>
+        <text>hmm the server rolled back for some reason, to a previous version</text>
+        <user>Behin</user>
+        <number>18</number>
+    </chat>
+    <chat>
+        <time>Fri, Apr 14 22:17:32</time>
+        <text>Next version also has a couple new settings you can change.</text>
+        <user>Behin</user>
+        <number>17</number>
+    </chat>
+    <chat>
+        <time>Fri, Apr 14 0:41:29</time>
+        <text>Gardens have been fixed not to go over mp/hp cap, in the next version :)</text>
+        <user>Behin</user>
+        <number>16</number>
+    </chat>
+    <chat>
+        <time>Thu, Apr 13 1:20:18</time>
+        <text>yeah i havent coded anything for death yet so you can unlimited  heal on gardens</text>
+        <user>Behin</user>
+        <number>15</number>
+    </chat>
+    <chat>
+        <time>Mon, Apr 10 20:15:53</time>
+        <text>and it doesn\'t remember your level after you move</text>
+        <user>Cracker</user>
+        <number>14</number>
+    </chat>
+    <chat>
+        <time>Mon, Apr 10 20:14:48</time>
+        <text>HP: 43 / 10</text>
+        <user>Cracker</user>
+        <number>13</number>
+    </chat>
+    <chat>
+        <time>Mon, Apr 10 20:14:20</time>
+        <text>the gardens let you get more than your maxmimum HP</text>
+        <user>Cracker</user>
+        <number>12</number>
+    </chat>
+    <chat>
+        <time>Mon, Apr 10 20:12:02</time>
+        <text>how do you get more hp</text>
+        <user>Cracker</user>
+        <number>11</number>
+    </chat>
+    <chat>
+        <time>Sun, Apr 09 21:56:53</time>
+        <text>Spawns are still a bit sparse.  Go north to find things other than acid grass.</text>
+        <user>Behin</user>
+        <number>8</number>
+    </chat>
+    <chat>
+        <time>Sun, Apr 09 13:54:19</time>
+        <text>Settings are now in, you can choose background and font color.</text>
+        <user>Behin</user>
+        <number>7</number>
+    </chat>
+    <chat>
+        <time>Sat, Apr 01 12:01:14</time>
+        <text>The Player Menu on the side of your screen has alot of useful info, and will oneday be used to personalize aspects of the interface.</text>
+        <user>Behin</user>
+        <number>6</number>
+    </chat>
+    <chat>
+        <time>Wed, Mar 22 0:00:33</time>
+        <text>I've just gotten the combat system working, so enjoy beating the heck outta stuff, and don't die, I haven't coded that yet &gt;.&gt;</text>
+        <user>Behin</user>
+        <number>2</number>
+    </chat>
+    <chat>
+        <time>Tue, Mar 21 22:23:01</time>
+        <text>Welcome to Dalaroth!  This is the chat box, so chat away.</text>
+        <user>Behin</user>
+        <number>1</number>
+    </chat>
+</behin_db>
