@@ -1,5 +1,8 @@
 <?
-session_start();
+if(!isset($_COOKIE["PHPSESSID"]))
+{
+  session_start();
+}
 ?>
 <!-- Begin File: StatsPane.php -->
 
@@ -116,6 +119,8 @@ function stats_doall()
 
 function echo_stats_general()
 {
+	if($_SERVER["HTTP_HOST"]=="localhost")
+		echo "You're on localhost!";
 ?>
 
 	Name: 
@@ -206,7 +211,7 @@ function echo_stats_stats()
 		<b>Stat Credits:</b> <?echo $_SESSION["userinfo"]["credits"];?><br>
 	</form>
 <?
-if($_GET['debug']== "yes")
+if(isset($_GET['debug'])&&$_GET['debug']== "yes")
 {
 	echo "<pre>POST:";
 	print_r($_POST);
