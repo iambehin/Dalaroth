@@ -1,4 +1,4 @@
-<div>
+<div id=banner class="banner">
 <script type="text/javascript"><!--
 google_ad_client = "pub-1398164775684416";
 /* 728x90, created 2/28/08 */

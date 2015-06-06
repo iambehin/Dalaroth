@@ -68,36 +68,25 @@ function stats_doall()
 			<a OnMouseOver="domenu('statsEquip');" >Equip</a>
 			<a OnMouseOver="domenu('statsSettings')" >Settings</a>
 		
-           </div>
-
-		<div class=StatsDisp id='statsGeneral'>
-<?
-			echo_stats_general();
-?>
+         </div>
+		<div class=Stats>
+			<div class=StatsDisp id='statsGeneral'>
+				<?	echo_stats_general();
+				?>
+			</div>
+			<div class=StatsDisp id='statsStats'>
+				<?	echo_stats_stats();
+				?> 
+			</div>
+			<div class=StatsDisp id='statsEquip'>
+				<?	echo_stats_equip();
+				?>
+			</div>
+			<div class=StatsDisp id='statsSettings'>
+				<?	echo_stats_settings();
+				?>
+			</div>
 		</div>
-		<div class=StatsDisp id='statsStats'>
-<?
-			echo_stats_stats();
-?> 
-		</div>
-		<div class=StatsDisp id='statsEquip'>
-<?
-			echo_stats_equip();
-?>
-		</div>
-		<div class=StatsDisp id='statsSettings'>
-<?
-			echo_stats_settings();
-?>
-		</div>
-		<br><br><br>
-
-		<div class="scroll center">
-				<a OnMouseOver="<? j_scroll(5,'stats','StatsDisp','up'); ?>; href="javascript:<? j_scroll(15,'stats','StatsDisp','up'); ?>">Menu Up</a>
-				<a OnMouseOver="<? j_scroll(5,'stats','StatsDisp','down'); ?>; href="javascript:<? j_scroll	(15,'stats','StatsDisp','down'); ?>">Menu Down</a>
-		</div>
-		<br>
-
 <?
 	}
 

@@ -59,13 +59,6 @@ if(are_we_validated())
 else
 	echo "You are not validated";
 ?>
-<!-- google ads: -->
-<br><br><br><br><br><br>
-<div>
-Ad Blockers make it hard to pay webhosting bills =(
-       <? include banner_location();?>
-</div>
-<!-- end of google ads-->
 </div><!--This ends CenterPaneText-->
 
 <div class=CenterPaneNav>
@@ -88,7 +81,17 @@ if($can_I_Travel)
                                  
 ?>
 <pre>
-                         </pre><!--This makes sure the hp span doesn't randomnly jump outside the pane-->
+
+
+
+
+
+
+
+
+
+
+hi                         </pre><!--This makes sure the hp span doesn't randomnly jump outside the pane-->
 </div>
 
 
@@ -215,5 +218,7 @@ function doall()
 
 }//end doall();
 ?>
-
+<div id=CPBottom class=CPBottom>
+Bottom
+</div>
 </body></html><! End File: CenterPane.php >

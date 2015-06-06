@@ -1,7 +1,8 @@
 <?
 /****************************************************************
-*    This is the main index for Dalaroth.  Written by Behin.
-*    Here are initial variables/functions:
+*   This is the main index for Dalaroth.  Written by Behin.
+*	For debug, set ?debug=true in the url.
+*   Here are initial variables/functions:
 ****************************************************************/
 $_time = microtime();
 session_start();
@@ -100,15 +101,8 @@ function isAColor($sent_color)
 
 function change_()
 {
-//debug:
-        echo "debug:\nPOST: ";
-        print_r($_POST);
-        echo "SESSION:";
-        print_r($_SESSION);
-        echo ":end debug\n";
-//end debug
       //Until I figure out why my reset button isn't working, I'm moving the function here to ensure players don't get stuck in fake places.
-          if($_POST["traveling"] == "reset")
+          if(isset($_POST["traveling"])&&$_POST["traveling"] == "reset")
                 {
                  $_SESSION["userinfo"]["x"]=0;
                  update_db("x");
@@ -235,70 +229,69 @@ function change_()
    <meta http-equiv="refresh" content="180">
 </head>
 <body onload="domenu('statsGeneral');">
-<?
-	if(@$_GET["debug"]) 
-	{
-		var_dump($_SESSION);
-		var_dump($_REQUEST);
-	}
-?>
+	<?
+		if(@$_GET["debug"]) 
+		{
+			var_dump($_SESSION);
+			var_dump($_REQUEST);
+		}
+	?>
 	<div id=background class=background>
-<!-- Time Before error_echo: <? echo time_since($_time);?> -->
-<?
-
-		echo echo_background_image();
-
-?>
-<!-- Time after bg image: <? echo time_since($_time);?> -->
+		<!-- Time Before error_echo: <? echo time_since($_time);?> -->
+		<?	echo echo_background_image();
+		?>
+		<!-- Time after bg image: <? echo time_since($_time);?> -->
 	</div>
 	<div id="CenterPane" class="CenterPane">
 		<div id="TopPane" class="TopPane">
 			<img src="./images/banner.png" alt="Welcome To Dalaroth" style="border:0" id="fullsize" class="fullsize"/>
 		</div>
-<!-- Time Since: <? echo time_since($_time);?> -->
-	<div id="ChatScroll" class="ChatScroll">
-		<a OnMouseOver="<? j_scroll(1,'none','ChatPane','up'); ?>" OnMouseOut="scroll='no'" href="javascript:<? j_scroll(5,'none','ChatPane','up'); ?>" style="background-color:#242;">Chat Up</a>
-		<a OnMouseOver="<? j_scroll(1,'none','ChatPane','down'); ?> " OnMouseOut="scroll='no'" href="javascript:<? j_scroll(5,'none','ChatPane','down'); ?>" style="background-color:#262;">Chat Down</a> 
+		<!-- Time Since: <? echo time_since($_time);?> -->
+		<div id="ChatScroll" class="ChatScroll">
+			<a OnMouseOver="<? j_scroll(1,'none','ChatPane','up'); ?>" OnMouseOut="scroll='no'" href="javascript:<? j_scroll(5,'none','ChatPane','up'); ?>" style="background-color:#242;">Chat Up</a>
+			<a OnMouseOver="<? j_scroll(1,'none','ChatPane','down'); ?> " OnMouseOut="scroll='no'" href="javascript:<? j_scroll(5,'none','ChatPane','down'); ?>" style="background-color:#262;">Chat Down</a> 
+		</div>
+		<div  id="ChatPane" class="ChatPane">
+			<?	include "./code/chat.php";
+			?>
+		</div>
+		<!-- Time Since: <? echo time_since($_time);?> -->
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		<iframe src="code/CenterPane.php" class=CenterFrame allowTransparency="true">
+			Sorry, Dalaroth needs frames.
+		</iframe>
+		<!-- google ads: -->
+			<?	include banner_location();
+			?>
+		<!-- end of google ads-->
+
 	</div>
-	<div  id="ChatPane" class="ChatPane">
-		
-<?
-		include "./code/chat.php";
-?>
+	<!-- Time Since: <? echo time_since($_time);?> -->
+
+
+	<div class="StatsPane">
+		<?
+			if(file_exists("./code/StatsPane.php"))
+				include "./code/StatsPane.php";
+			else
+				echo "Can't find the stats pane.";
+		?>
+	</div><!-- ends StatsPane-->
+
+
+		<!-- Time Since: <? echo time_since($_time);?> -->
+	<div class="BottomPane">
+		<?
+			@mysql_close();
+			@mysql_close();
+			@mysql_close();
+		?>
+		Pageload: <? echo time_since($_time);?> seconds. 
+		<!-- sadly we are no longer validated
+		<a href="http://validator.w3.org/check/referer" target="_BLANK">
+			<img src="http://www.w3.org/Icons/valid-xhtml10" style="border:0" alt="Valid XHTML 1.0!" height="31" width="88" />
+		 </a>
+		-->
 	</div>
-<!-- Time Since: <? echo time_since($_time);?> -->
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<iframe src="code/CenterPane.php" class=CenterFrame allowTransparency="true">
-Sorry, Dalaroth needs frames.
-</iframe>
-
-</div>
-<!-- Time Since: <? echo time_since($_time);?> -->
-
-
-<div class="StatsPane">
-<?
-	if(file_exists("./code/StatsPane.php"))
-		include "./code/StatsPane.php";
-	else
-		echo "Can't find the stats pane.";
-?>
-</div><!-- ends StatsPane-->
-
-
-<!-- Time Since: <? echo time_since($_time);?> -->
-<div class="BottomPane">
-<?
-	@mysql_close();
-	@mysql_close();
-	@mysql_close();
-?>
-	Pageload: <? echo time_since($_time);?> seconds. 
-	<!-- sadly we are no longer validated
-<a href="http://validator.w3.org/check/referer" target="_BLANK">
-		<img src="http://www.w3.org/Icons/valid-xhtml10" style="border:0" alt="Valid XHTML 1.0!" height="31" width="88" />
-	 </a>
--->
-</div>
 
 </body> </html>
