@@ -2,6 +2,9 @@ You see an empty field.
 <br/><br/>
 
 <?
+if(!function_exists("travel_x"))
+include "functions.php";
+
 $bp = explode(",",$_SESSION["userinfo"]["backpack"]);
 $quest = explode(":",$_SESSION["userinfo"]["quest"]);
 if(in_array("14",$bp))
@@ -19,7 +22,7 @@ if (($key = array_search('14', $bp)) !== false) {
     unset($bp[$key]); //removes ahlon from bp.
 	}
 $_SESSION["userinfo"]["backpack"]=implode(",",$bp);
-update_bp("backpack");
+update_db("backpack");
 }//end if ahlon in bp
 
 elseif($quest[0]>0)//if this quest has been done.

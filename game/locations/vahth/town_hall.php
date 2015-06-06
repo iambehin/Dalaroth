@@ -18,7 +18,7 @@ return false;
 if($questInfo[0] =="0" && $questInfo[1] == "0")
 {
 
-if($_POST["quest_0_1"] === "yes")
+if(isset($_POST["quest_0_1"])&&$_POST["quest_0_1"] === "yes")
 {
 $questInfo[0]=0;
 $questInfo[1]=1;
@@ -27,7 +27,7 @@ $questInfo[1]=1;
 <br/>
 <?
 }
-elseif($_POST["quest_0_1"]=== "no")
+elseif(isset($_POST["quest_0_1"])&&$_POST["quest_0_1"]=== "no")
 {
 ?>
 " Thank you for your time, nonetheless. "
@@ -64,7 +64,7 @@ Will you escort my friend, Ahlon to his field, and keep guard while he collects 
 
 
 }
-if ($questInfo[0] == "0" && $questInfo[1] == "1")
+if (isset($_POST["quest_0_2"])&&$questInfo[0] == "0" && $questInfo[1] == "1")
 {
 if($_POST["quest_0_2"] == "yes")
 {
@@ -77,7 +77,7 @@ $questInfo[1]=2;
 <br/>
 <?
 }
-elseif($_POST["quest_0_2"] === "no")
+elseif(isset($_POST["quest_0_2"])&&$_POST["quest_0_2"] === "no")
 {
 ?>
 " Very well, please return when you are ready. "

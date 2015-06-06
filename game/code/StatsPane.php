@@ -183,7 +183,8 @@ function echo_stats_equip()
 	foreach($backpack_items as $backpack)
 		$string_to_echo .=  '<a href="javascript:popItemStats('.$backpack["number"].')">'.ucwords($backpack["name"]) . "</a>, ";
 	$string_to_echo{strlen($string_to_echo)-2} = " ";
-	echo $string_to_echo."\n<br>\n<b>Quests:";
+	echo $string_to_echo."\n<br>";
+	$quest = explode(":",$_SESSION["quest"]);
 	
 }//end echo_stats_equip
 
@@ -211,7 +212,9 @@ function echo_stats_stats()
 		<b>Intelligence:</b> <?echo $_SESSION["userinfo"]["intel"];if($_SESSION["userinfo"]["credits"] >= $_SESSION["userinfo"]["intel"]) { ?> <button name="add_credit" value=intel type=submit>+</button><?}?><br>
 		<b>Stat Credits:</b> <?echo $_SESSION["userinfo"]["credits"];?><br>
 	</form>
+	<b>Monsters killed for the mayor:</b>
 <?
+	echo $_SESSION["userinfo"]["vahth_mayor"] . "<br>";
 if(isset($_GET['debug'])&&$_GET['debug']== "yes")
 {
 	echo "<pre>POST:";

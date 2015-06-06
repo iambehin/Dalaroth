@@ -8,7 +8,7 @@ session_start();
 //Disabled because awardspace doesn't allow me to set it, but this would set the max load time of the page to 9 seconds:
 //set_time_limit(9);
 global $version;
-$version = ".05";
+$version = ".06";
 
 
 

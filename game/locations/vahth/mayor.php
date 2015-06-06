@@ -1,5 +1,5 @@
 This is the Mayor's office!
-<img height="200" width="100" src="/game/images/Vahth/mayor.png">
+<img height="200" width="100" src="../images/Vahth/mayor.png">
 
 <br>
 <br>
@@ -7,13 +7,17 @@ This is the Mayor's office!
 
 if($_SESSION["userinfo"]["vahth_mayor"] =="0")
 {
+if(isset($_POST["mayor_quest"]))
+	$m_q=$_POST["mayor_quest"];
+else
+	$m_q=null;
 
-if($_POST["mayor_quest"] === "yes")
+if($m_q === "yes")
 {
 $_SESSION["userinfo"]["vahth_mayor"]=".5";
 echo "Thank you. \n<br>";
 }
-elseif($_POST["mayor_quest"]=== "no")
+elseif($m_q=== "no")
 {
 ?>
 "My thanks for thy time, nonetheless. "
@@ -55,7 +59,7 @@ elseif ($_SESSION["userinfo"]["vahth_mayor"] == ".5")
 echo "Thou hast yet to slay a beast, my champion, please return whenst thou hast.";
 
 }
-elseif($_SESSION["userinfo"]["vahth_mayor"] > 50)
+elseif($_SESSION["userinfo"]["vahth_mayor"] > 49)
 {
 echo "My thanks, champion, thou hast proven thy worth.";
 
