@@ -156,9 +156,9 @@ function echo_stats_equip()
 	foreach(explode(",",@$_SESSION["userinfo"]["backpack"]) as $backpack_item)
 		array_push($backpack_items,mysql_fetch_assoc(mysql_query("SELECT * FROM items WHERE number='".$backpack_item."' LIMIT 1",$db)));
 
-	echo "<b  OnMouseOver=\"changeTip('This is how much gold your character has.');\" onMouseOut='changeTip();' >Gold</b> : ".$_SESSION["userinfo"]["gold"]."\n<br>";
-	echo "<b OnMouseOver=\"changeTip('This is the armor you are currently wearing.');\" onMouseOut='changeTip();'>Armor</b> : <a OnMouseOver=\"changeTip('Click to view the armor you are currently wearing.');\" onMouseOut='changeTip();' href='javascript:popItemStats(".$_SESSION["armorstats"]["number"].")'>" .ucwords(@$_SESSION["armorstats"]["name"]) . "</a> ";
-	echo "<form name='equip_armor' action='#' method=POST OnMouseOver=\"changeTip('Change the armor you are wearing here.');\" onMouseOut='changeTip();'><select name='equip_armor'>";
+	echo "<b>Gold</b> : ".$_SESSION["userinfo"]["gold"]."\n<br>";
+	echo "<b>Armor</b> : <a OnMouseOver=\"changeTip('Click to view the armor you are currently wearing.');\" onMouseOut='changeTip();' href='javascript:popItemStats(".$_SESSION["armorstats"]["number"].")'>" .ucwords(@$_SESSION["armorstats"]["name"]) . "</a> ";
+	echo "<form name='equip_armor' action='#' method=POST><select name='equip_armor'>";
 	foreach($backpack_items as $backpack)
 	{
 		if($backpack["type"] == "armor")
@@ -166,8 +166,8 @@ function echo_stats_equip()
 	}
 	echo "<option value=1>Nothing.\n";
 	echo "</select><button type=submit>Equip</button></form>\n";
-	echo "<b OnMouseOver=\"changeTip('This is the weapon you are currently wielding.');\" onMouseOut='changeTip();'>Weapon</b> : <a  OnMouseOver=\"changeTip('Click to view the weapon you are currently wielding.');\" onMouseOut='changeTip();' href='javascript:popItemStats(".$_SESSION["weaponstats"]["number"].")'>" .ucwords(@$_SESSION["weaponstats"]["name"]) . "</a> ";
-	echo "<form name='equip_weapon' action='#' method=POST OnMouseOver=\"changeTip('Change the weapon you are wielding here.');\" onMouseOut='changeTip();'><select name='equip_weapon'>";
+	echo "<b>Weapon</b> : <a href='javascript:popItemStats(".$_SESSION["weaponstats"]["number"].")'>" .ucwords(@$_SESSION["weaponstats"]["name"]) . "</a> ";
+	echo "<form name='equip_weapon' action='#' method=POST><select name='equip_weapon'>";
 	foreach($backpack_items as $backpack)
 	{
 		if($backpack["type"] == "weapon")
@@ -175,15 +175,16 @@ function echo_stats_equip()
 	}
 	echo "<option value=1>Nothing\n";
 	echo "</select><button type=submit>Equip</button></form>\n";
-	echo "<b OnMouseOver=\"changeTip('View items in your backpack.');\" onMouseOut='changeTip();'>Backpack</b> : ";
+	echo "<b>Backpack</b> : ";
 	array_pop($backpack_items);
 	if(count($backpack_items )== 0)
 		$backpack_items = array(array("name" =>"Empty","number" => "0"));
 	$string_to_echo = "";
 	foreach($backpack_items as $backpack)
-		$string_to_echo .=  '<a  OnMouseOver="changeTip(\'View items in your backpack.\');" onMouseOut="changeTip();" href="javascript:popItemStats('.$backpack["number"].')">'.ucwords($backpack["name"]) . "</a>, ";
+		$string_to_echo .=  '<a href="javascript:popItemStats('.$backpack["number"].')">'.ucwords($backpack["name"]) . "</a>, ";
 	$string_to_echo{strlen($string_to_echo)-2} = " ";
-	echo $string_to_echo."\n<br>";
+	echo $string_to_echo."\n<br>\n<b>Quests:";
+	
 }//end echo_stats_equip
 
 

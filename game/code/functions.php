@@ -314,7 +314,7 @@ function update_db($update_act)
 
 	function popMap()
 	{
-		window.open('/game/code/fullmap.php','Dalaroth World Map','scrollbars,resizable=1,status=0');
+		window.open('fullmap.php','Dalaroth World Map','scrollbars,resizable=1,status=0');
 	}
 
 	var currentdiv = 'statsGeneral';//this is the div currently displaying. Defaults to general.
