@@ -102,15 +102,10 @@ signin();
 </head>
 <body>
 
-
 <center>
-<!-- google ads: -->
-<?include "banner.php";?>
-<!-- end of google ads-->
+<!-- google ads: --><?include "banner.php";?><!-- end of google ads-->
 
-
-<!-- google adsense scripts-->
-
+<!-- google adsense scripts
 <script type="text/javascript"><!--
 google_ad_client = "pub-1398164775684416";
 /* 728x90, created 3/17/08 */
@@ -118,15 +113,12 @@ google_ad_slot = "7619028599";
 google_ad_width = 728;
 google_ad_height = 90;
 google_cpa_choice = ""; // on file
-//-->
+//-\->
 </script>
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-
-<!-- end of adsense scripts-->
-<br/>
-
+end of adsense scripts-->
 <img src="./game/images/banner.png" alt="Welcome to Dalaroth">
 <br/>
 There is an experimental flash version of dalaroth <a href=dalaroth.21>here</a>.

@@ -6,14 +6,14 @@ if(!function_exists("travel_x"))
 include "functions.php";
 
 $bp = explode(",",$_SESSION["userinfo"]["backpack"]);
-$quest = explode(":",$_SESSION["userinfo"]["quest"]);
+$quest = explode(":",$_SESSION["userinfo"]["ahlon_quest"]);
 if(in_array("14",$bp))
 {//if ahlon in bp
 echo "Ahlon:\"This is my field, thank you for the escort, I shall deactivate the protective enchantment, and gather the crops while you stand guard.\"\n<br/>";
 
 $quest[0]="0";
 $quest[1]=3;
-$_SESSION["userinfo"]["quest"] = implode(":",$quest);
+$_SESSION["userinfo"]["ahlon_quest"] = implode(":",$quest);
 update_db("quest");
 
 echo ".<br/>\n.<br/>\n.<br/>\n.<br/>\n.<br/>\n";

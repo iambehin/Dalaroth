@@ -128,7 +128,7 @@ function echo_stats_general()
 	echo ucwords($_SESSION["uname"]); 
 ?>.
 	<br>
-	<form method=post action="../../index.php" target="_PARENT">
+	<form method=post action="../index.php" target="_PARENT">
 		<input type=hidden name=page value="signout.php">
 		<input type=hidden name=signout value=y>
 		<input type=submit value=Signout>
