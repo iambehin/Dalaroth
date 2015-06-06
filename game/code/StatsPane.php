@@ -27,7 +27,7 @@ include "functions.php";
 
 if(are_we_validated())
 {
-	echo stats_doall();
+	stats_doall();
 }
 else
 	echo "I can't find your sign in info..<br /><a href='../' target='_top'>Go sign in.</a>";
@@ -49,13 +49,13 @@ function stats_doall()
         {
 	
 		echo "\n<br><span class=bigwhite>Gen:</span><br>\n\n";
-		echo echo_stats_general();
+		echo_stats_general();
 		echo "\n<br><span class=bigwhite>Stats:</span><br>\n\n";
-		echo echo_stats_stats();
+		echo_stats_stats();
 		echo "\n<br><span class=bigwhite>Equip:</span><br>\n\n";
-		echo echo_stats_equip();
+		echo_stats_equip();
 		echo "\n<br><span class=bigwhite>Settings:</span><br>\n\n";
-		echo echo_stats_settings();
+		echo_stats_settings();
 	}
 	else
 	{
@@ -63,38 +63,38 @@ function stats_doall()
 ?>
 		<div class=statsLinks>
 
-			<a OnMouseOver="domenu('statsGeneral');changeTip('View general Character information.');" onMouseOut="changeTip();" >Gen</a>
-			<a OnMouseOver="domenu('statsStats');changeTip('View your Statistics.');" onMouseOut="changeTip();" >Stats</a>
-			<a OnMouseOver="domenu('statsEquip');changeTip('View your Equipment.');" onMouseOut="changeTip();" >Equip</a>
-			<a OnMouseOver="domenu('statsSettings');changeTip('Change Page and/or Game Settings.');" onMouseOut="changeTip();" >Settings</a>
+			<a OnMouseOver="domenu('statsGeneral');">Gen</a>
+			<a OnMouseOver="domenu('statsStats');" >Stats</a>
+			<a OnMouseOver="domenu('statsEquip');" >Equip</a>
+			<a OnMouseOver="domenu('statsSettings')" >Settings</a>
 		
            </div>
 
 		<div class=StatsDisp id='statsGeneral'>
 <?
-			echo echo_stats_general();
+			echo_stats_general();
 ?>
 		</div>
 		<div class=StatsDisp id='statsStats'>
 <?
-			echo echo_stats_stats();
+			echo_stats_stats();
 ?> 
 		</div>
 		<div class=StatsDisp id='statsEquip'>
 <?
-			echo echo_stats_equip();
+			echo_stats_equip();
 ?>
 		</div>
 		<div class=StatsDisp id='statsSettings'>
 <?
-			echo echo_stats_settings();
+			echo_stats_settings();
 ?>
 		</div>
 		<br><br><br>
 
 		<div class="scroll center">
-				<a OnMouseOver="<? j_scroll(5,'stats','StatsDisp','up'); ?>changeTip('Hover to scroll the Menu Up slowly; click for a faster scroll.');" OnMouseOut="scroll='no';changeTip();" href="javascript:<? j_scroll(15,'stats','StatsDisp','up'); ?>">Menu Up</a>
-				<a OnMouseOver="<? j_scroll(5,'stats','StatsDisp','down'); ?>changeTip('Hover to scroll the Menu Down slowly; click for a faster scroll.');" OnMouseOut="scroll='no';changeTip();" href="javascript:<? j_scroll	(15,'stats','StatsDisp','down'); ?>">Menu Down</a>
+				<a OnMouseOver="<? j_scroll(5,'stats','StatsDisp','up'); ?>; href="javascript:<? j_scroll(15,'stats','StatsDisp','up'); ?>">Menu Up</a>
+				<a OnMouseOver="<? j_scroll(5,'stats','StatsDisp','down'); ?>; href="javascript:<? j_scroll	(15,'stats','StatsDisp','down'); ?>">Menu Down</a>
 		</div>
 		<br>
 
@@ -139,12 +139,12 @@ function echo_stats_general()
 	"<br>Y:".$_SESSION["userinfo"]["y"] . 
 	"<br>\n<br>";
 	global $version;
-	echo "<a onMouseover=\"changeTip('Click this to open version notes for this version of Dalaroth.');\" onMouseOut='changeTip();' target='_blank' href='../version.html'>Dalaroth $version</a> \n";
+	echo "<a target='_blank' href='../version.html'>Dalaroth $version</a> \n";
 
 ?>
 	<br>Copyright <a href="mailto:iambehin@gmail.com" target="_BLANK">Behin</a> &#169;2006
 	<br> <a href="../style_05.css" target="_BLANK">Style.</a>
-	<br><a href="../manual.pdf" OnMouseOver="changeTip('View the Dalaroth Manual.');" onMouseOut="changeTip();" target="_BLANK">Manual</a>
+	<br><a href="../manual.pdf" target="_BLANK">Manual</a>
 <?
 }//end echo_stats_general()
 
@@ -157,7 +157,7 @@ function echo_stats_equip()
 		array_push($backpack_items,mysql_fetch_assoc(mysql_query("SELECT * FROM items WHERE number='".$backpack_item."' LIMIT 1",$db)));
 
 	echo "<b>Gold</b> : ".$_SESSION["userinfo"]["gold"]."\n<br>";
-	echo "<b>Armor</b> : <a OnMouseOver=\"changeTip('Click to view the armor you are currently wearing.');\" onMouseOut='changeTip();' href='javascript:popItemStats(".$_SESSION["armorstats"]["number"].")'>" .ucwords(@$_SESSION["armorstats"]["name"]) . "</a> ";
+	echo "<b>Armor</b> : <a href='javascript:popItemStats(".$_SESSION["armorstats"]["number"].")'>" .ucwords(@$_SESSION["armorstats"]["name"]) . "</a> ";
 	echo "<form name='equip_armor' action='#' method=POST><select name='equip_armor'>";
 	foreach($backpack_items as $backpack)
 	{
@@ -183,8 +183,7 @@ function echo_stats_equip()
 	foreach($backpack_items as $backpack)
 		$string_to_echo .=  '<a href="javascript:popItemStats('.$backpack["number"].')">'.ucwords($backpack["name"]) . "</a>, ";
 	$string_to_echo{strlen($string_to_echo)-2} = " ";
-	echo $string_to_echo."\n<br>";
-	$quest = explode(":",$_SESSION["quest"]);
+	echo $string_to_echo."\n<br>\n";
 	
 }//end echo_stats_equip
 
@@ -197,7 +196,7 @@ function echo_stats_stats()
 ?>
 	<b>Race:</b> <?echo ucfirst($_SESSION["userinfo"]["race"]);?><br>
 	<b>Sex:</b> <?echo ucfirst($_SESSION["userinfo"]["sex"]);?><br>
-	<b OnMouseOver="changeTip('This is your player number, which is useful in error reports.');" onMouseOut="changeTip();"> P-Num:</b><?echo ucfirst($_SESSION["userinfo"]["number"]);?><br>
+	<b> P-Num:</b><?echo ucfirst($_SESSION["userinfo"]["number"]);?><br>
 	<b>Level:</b> <?echo $_SESSION["userinfo"]["level"]; ?> : <?echo ucfirst($_SESSION["userinfo"]["exp"])." / " . $_exptable[$_SESSION["userinfo"]["level"]];?><br>
 	<b>Class:</b> <?echo $_SESSION["userinfo"]["class"]; ?><br>
 	<b>HP:</b> <?echo $_SESSION["userinfo"]["hp"] . " / " . $_SESSION["userinfo"]["maxhp"];?><br>
@@ -214,7 +213,7 @@ function echo_stats_stats()
 	</form>
 	<b>Monsters killed for the mayor:</b>
 <?
-	echo $_SESSION["userinfo"]["vahth_mayor"] . "<br>";
+	echo $_SESSION["userinfo"]["vahth_mayor"] . "<br>\n";
 if(isset($_GET['debug'])&&$_GET['debug']== "yes")
 {
 	echo "<pre>POST:";
@@ -274,7 +273,7 @@ function echo_stats_Settings()
 			<? printColorOptions("blue"); ?>
 		</select>
 		<br>
-		<input onMouseOver="changeTip('Submit your font color choice to the database.');" onMouseOut="changeTip();" type=submit value="Submit Color">
+		<input type=submit value="Submit Color">
 
 	</form>
 	<br>
@@ -287,7 +286,7 @@ function echo_stats_Settings()
 			<option value=1>Alot 50%
 			<option value=0>All the Time! 100%
 		</select>
-		<input onMouseOver="changeTip('Submit your difficulty choice to the database.');" onMouseOut="changeTip();" type=submit value="Submit Difficulty">
+		<input type=submit value="Submit Difficulty">
 	</form>
 	<form name=StatsDisp method=POST action="#">
 		Font-Family:<select name=font-family>

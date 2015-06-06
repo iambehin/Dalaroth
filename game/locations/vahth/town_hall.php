@@ -18,48 +18,46 @@ return false;
 if($questInfo[0] =="0" && $questInfo[1] == "0")
 {
 
-if(isset($_POST["quest_0_1"])&&$_POST["quest_0_1"] === "yes")
-{
-$questInfo[0]=0;
-$questInfo[1]=1;
-?>
-" Thank you. "
-<br/>
-<?
-}
-elseif(isset($_POST["quest_0_1"])&&$_POST["quest_0_1"]=== "no")
-{
-?>
-" Thank you for your time, nonetheless. "
-<br/>
-<?
-}
-else
-{
-?>
-<i>A denizen of Vahth approaches you warmly.</i>
-<p class=indent>
-"
-My name is Gal, welcome to Vahth, friend.
-I see you are an adventurer, I'm afraid we are not a warriour people.
-However, these are dark times, and even peaceful villagers need protection.
-On behalf of the villagers of Vahth, I have a request for you.
-Our grass has had an evil enchantment cast upon it, by The Witch.
-It no longer grows peacefully and pads our feet, but throws acid at us.
-We have lost many a life to this grass, and cannot grow crops safely.
-Farmers require an escort merely to plant crops.
-"
-</p>
-"
-Will you escort my friend, Ahlon to his field, and keep guard while he collects his crop?
-"
-<form action=# method=POST>
-<button name="quest_0_1" value=yes>Yes, I'll be glad to.</button>
-<button name="quest_0_1" value=no>No, this is not my problem</button>
-</form>
+	if(isset($_POST["quest_0_1"])&&$_POST["quest_0_1"] === "yes")
+	{
+		$questInfo[0]=0;
+		$questInfo[1]=1;
+		echo " \"Thank you.\" 
+		<br/>";
+	}
+	elseif(isset($_POST["quest_0_1"])&&$_POST["quest_0_1"]=== "no")
+	{
+	?>
+	" Thank you for your time, nonetheless. "
+	<br/>
+	<?
+	}
+	else
+	{
+	?>
+	<i>A denizen of Vahth approaches you warmly.</i>
+	<p class=indent>
+	"
+	My name is Gal, welcome to Vahth, friend.
+	I see you are an adventurer, I'm afraid we are not a warriour people.
+	However, these are dark times, and even peaceful villagers need protection.
+	On behalf of the villagers of Vahth, I have a request for you.
+	Our grass has had an evil enchantment cast upon it, by The Witch.
+	It no longer grows peacefully and pads our feet, but throws acid at us.
+	We have lost many a life to this grass, and cannot grow crops safely.
+	Farmers require an escort merely to plant crops.
+	"
+	</p>
+	"
+	Will you escort my friend, Ahlon to his field, and keep guard while he collects his crop?
+	"
+	<form action=# method=POST>
+	<button name="quest_0_1" value=yes>Yes, I'll be glad to.</button>
+	<button name="quest_0_1" value=no>No, this is not my problem</button>
+	</form>
 
 
-<?
+	<?
 }
 
 
