@@ -25,7 +25,7 @@ if(isset($_POST["portal_travel"]))
    {
 		$_SESSION["userinfo"]["x"]=0;
 		$_SESSION["userinfo"]["y"]=20;
-   	$_SESSION["userinfo"]["travelable"]="n,s,e";
+   	$_SESSION["userinfo"]["travelable"]="n,s";
    }
 	echo 
 	"\"You have been teleported.\"\n".
