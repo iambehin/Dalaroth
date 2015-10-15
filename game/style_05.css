@@ -458,7 +458,7 @@ text-shadow: 1px 1px 2px white, -1px -1px 2px grey;
 
 }
 .green {
-color:black;
+color:white;
 background-color:green;
 box-shadow: inset 0px 0px 10px 2px white;
 text-shadow: 1px 1px 2px grey, -1px -1px 2px yellow;
