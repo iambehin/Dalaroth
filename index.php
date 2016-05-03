@@ -94,11 +94,26 @@ signin();
 
 <!DOCTYPE HTML>
 
-<html>
+<html prefix="og: http://ogp.me/ns#">
 <head>
-<link media="screen, projection" href="style.css" rel="stylesheet" title="Default" type="text/css" />
-<link rel="icon" href="./game/images/dalaroth.ico" >
-<title>Dalaroth - <? echo $page;?></title>
+	<link media="screen, projection" href="style.css" rel="stylesheet" title="Default" type="text/css" />
+	<link rel="icon" href="./game/images/dalaroth.ico" >
+	<title>Dalaroth - <? echo $page;?></title>
+
+	<meta property="og:title" content="Dalaroth" />
+	<meta property="og:type" content="video.other" />
+	<meta property="og:url" content="http://dalaroth.awardspace.com/" />
+	<meta property="og:image" content="http://dalaroth.awardspace.com/game/images/banner.png" />
+
+	<link href="https://plus.google.com/106795922216194347031" rel="publisher" />
+
+	<script type="text/javascript" async defer
+	  src="https://apis.google.com/js/platform.js?publisherid=106795922216194347031">
+	</script>
+
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	
+
 </head>
 <body>
 
@@ -131,8 +146,16 @@ else
 echo "You requested an invalid page: $page email the admin: admin@dalaroth.awardspace.com";
 
 ?>
+<a href="http://www.facebook.com/dalarothGame">Facebook</a>
+<br>
+<div class="g-plusone" data-annotation="inline" data-width="300"></div>
+<br>
+<div class="g-plusone" data-size="tall" ... ></div>
+<br>
+<a href="https://twitter.com/dalaroth" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @dalaroth</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </center>
 
-<
+
 </body>
 </html>
