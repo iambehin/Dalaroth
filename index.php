@@ -116,6 +116,14 @@ signin();
 
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=54940088208";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <center>
 <!-- google ads: --><?include "banner.php";?><!-- end of google ads-->
@@ -146,14 +154,18 @@ else
 echo "You requested an invalid page: $page email the admin: admin@dalaroth.awardspace.com";
 
 ?>
-<a href="http://www.facebook.com/dalarothGame">Facebook</a>
 <br>
+<br>
+
+
+<div class="fb-follow" data-href="https://www.facebook.com/DalarothGame" data-layout="standard" data-show-faces="true"></div>
+
 <div class="g-plusone" data-annotation="inline" data-width="300"></div>
-<br>
-<div class="g-plusone" data-size="tall" ... ></div>
-<br>
+
 <a href="https://twitter.com/dalaroth" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @dalaroth</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
 </center>
 
 
