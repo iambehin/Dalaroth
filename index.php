@@ -166,7 +166,7 @@ google_cpa_choice = ""; // on file
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 end of adsense scripts-->
-<img src="./game/images/banner.png" alt="Welcome to Dalaroth">
+<img src="./game/images/frostyBanner.png" alt="Welcome to Dalaroth">
 <br/>
 There is an experimental flash version of dalaroth <a href=dalaroth.21>here</a>.
 <br/>
