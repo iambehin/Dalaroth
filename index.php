@@ -100,8 +100,8 @@ signin();
 	<link rel="icon" href="./game/images/dalaroth.ico" >
 	<title>Dalaroth - <? echo $page;?></title>
 
+	<meta property="fb:app_id" content="826825444116698"/>
 	<meta property="og:title" content="Dalaroth" />
-	<meta property="og:type" content="video.other" />
 	<meta property="og:url" content="http://dalaroth.awardspace.com/" />
 	<meta property="og:image" content="http://dalaroth.awardspace.com/game/images/banner.png" />
 
@@ -116,6 +116,27 @@ signin();
 
 </head>
 <body>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '826825444116698',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<!-- Old FB Insert Code:
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -124,6 +145,9 @@ signin();
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=54940088208";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+-->
+
+
 
 <center>
 <!-- google ads: --><?include "banner.php";?><!-- end of google ads-->
@@ -156,14 +180,20 @@ echo "You requested an invalid page: $page email the admin: admin@dalaroth.award
 ?>
 <br>
 <br>
+For feedback, head over to <a href="http://behinlive.atwebpages.com">DEV Behin's Blog</a>, or contact us below on social media:
+<br>
+<br>
 
-
-<div class="fb-follow" data-href="https://www.facebook.com/DalarothGame" data-layout="standard" data-show-faces="true"></div>
-
-<div class="g-plusone" data-annotation="inline" data-width="300"></div>
+<div class="g-plusone" data-annotation="inline" data-width="100"></div>
 
 <a href="https://twitter.com/dalaroth" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @dalaroth</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<br>
+
+<div class="fb-page" data-href="https://www.facebook.com/DalarothGame" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/DalarothGame"><a href="https://www.facebook.com/DalarothGame">Dalaroth</a></blockquote></div></div>
+
+
 
 
 </center>
