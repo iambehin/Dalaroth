@@ -9,7 +9,7 @@ session_start();
 //Disabled because awardspace doesn't allow me to set it, but this would set the max load time of the page to 9 seconds:
 //set_time_limit(9);
 global $version;
-$version = ".06";
+$version = ".1"; // 4 Oct 2016
 
 
 
@@ -59,14 +59,17 @@ function echo_background_image()
 	{
 		$_SESSION["userinfo"]["background"] = $_POST["BGSetting"];
 		update_db("background");
-	}
-	if(isset($_SESSION["userinfo"]["background"]) && file_exists($_SESSION["userinfo"]["background"]))
+		if(file_exists($_SESSION["userinfo"]["background"]))
 		return "<img name=backgroundIMG src=".$_SESSION["userinfo"]["background"]." style='border:0' alt='' class=fullsize>";
         else {
-	echo "<img src='images/black.png' style='border:0' alt='' class=fullsize><!-- debug _begin_db_dump";
-        print_r($_SESSION["userinfo"]["background"]);
-        return "-->";
-             }
+			echo "<img src='images/clouds.png' style='border:0' alt='' class=fullsize><!-- debug _begin_db_dump";
+			print_r($_SESSION["userinfo"]["background"]);
+			return "-->";
+            }
+	}
+	else
+		echo "<img src='images/clouds.png' style='border:0' alt='' class=fullsize>";
+		
 }// end echo_background_image()
 
 function echo_font_color()
@@ -244,7 +247,7 @@ function change_()
 	</div>
 	<div id="CenterPane" class="CenterPane">
 		<div id="TopPane" class="TopPane">
-			<img src="./images/banner.png" alt="Welcome To Dalaroth" style="border:0" id="fullsize" class="fullsize"/>
+			<img src="./images/frostyBanner.png" alt="Welcome To Dalaroth" style="border:0" id="fullsize" class="fullsize"/>
 		</div>
 		<!-- Time Since: <? echo time_since($_time);?> -->
 		<div id="ChatScroll" class="ChatScroll">

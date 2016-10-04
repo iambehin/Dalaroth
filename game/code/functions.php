@@ -72,7 +72,7 @@ function are_we_validated()
 	global $validated;
 	if($validated === "y")
 		return true;
-   if($_SESSION["validated"] == "y")
+   if(@$_SESSION["validated"] == "y")
    	return true;
            
    return false;
@@ -303,7 +303,7 @@ function update_db($update_act)
 	$_acts = array(
 	"hp"=>"hp","maxhp"=>"maxhp","mp"=>"mp","exp"=>"exp","level"=>"level","spells"=>"spells","class"=>"class","gold"=>"gold","background"=>"background",
 	"font_color"=>"fontcolor","difficulty"=>"difficulty","statsDisp"=>"statsDisp","backpack"=>"backpack",
-   "credits"=>"credits","ahlon_quest"=>"ahlon_quest","combat"=>"combat","font-family"=>"font-family","vahth_mayor"=>"vahth_mayor"
+   "credits"=>"credits","ahlon_quest"=>"ahlon_quest","combat"=>"combat","font-family"=>"font-family","vahth_mayor"=>"vahth_mayor","vahth_farm"=>"vahth_farm"
 	);
 	if(isset($_acts[$update_act]))
 		$result2 = mysql_query("UPDATE players SET ".$_acts[$update_act]." = '".$_SESSION["userinfo"][$_acts[$update_act]]."' WHERE name = '".$_SESSION["uname"]."'",$db) or die(mysql_error());

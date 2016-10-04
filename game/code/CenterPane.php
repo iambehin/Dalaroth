@@ -20,17 +20,19 @@ You should not see this.
    </head>
 <body style="background:transparent">
 
-<!--  Borders -->
+<!-- v.07 visual updates: remove border from Center Pane
+<!--  Borders --
 <div class="CenterPaneBorderLeft"></div>
 <div class="CenterPaneBorderRight"></div>
+
 <div class="CenterPaneBorderTop"></div>
 <div class="CenterPaneBorderBottom"></div>
+
 <div class="CenterPaneBorderTopLeft"></div>
-
 <div class="CenterPaneBorderBottomLeft"></div>
-
-
 <div class="CenterPaneBorderTopRight"></div>
+-->
+
 <div class=CenterPaneText id="CenterPaneText">
 
 
@@ -64,22 +66,26 @@ else
 <div class=CenterPaneNav>
 
 <?
-if($can_I_Travel)
-					echo echo_move_buttons();
-                                
-				echo "\n<br/><form method=post action='#'><button name=traveling type=submit value=reset>Reset Your Coordinates</button></form>\n";            
-                                echo "HP:<span style='border:2px black dotted;border-radius:20%;position:absolute;background-color:#D01;width:10em;height:1em;overflow:hidden;text-align:left;'>".
-				"<span style='border:2px black solid;border-radius:20%;position:absolute;background-color:DarkGreen;height:1em;width:" . ($_SESSION["userinfo"]["hp"]/$_SESSION["userinfo"]["maxhp"]*10) . "em;text-align:right;'>" . 
-				$_SESSION["userinfo"]["hp"] . "</span></span>\n<br><br>";
-                                echo "MP:<span style='border:2px black dotted;border-radius:20%;position:absolute;background-color:#66F;width:10em;height:1em;overflow:hidden;text-align:left;'>".
-				"<span style='border:2px black solid;border-radius:20%;position:absolute;background-color:blue;height:1em;width:" . ($_SESSION["userinfo"]["mp"]/$_SESSION["userinfo"]["maxmp"]*10) . "em;text-align:right;'>" . 
-				$_SESSION["userinfo"]["mp"] . "</span></span>\n<br/>";
-				echo "\n<br/><div class=mmap>Minimap: \n";
-				echo show_map($_SESSION["userinfo"]["x"]-3,$_SESSION["userinfo"]["x"]+3,$_SESSION["userinfo"]["y"]-3,$_SESSION["userinfo"]["y"]+3);
-				echo "\n<br/>\n";
-				echo "<a href=\"javascript:popMap();\">Full Map</a></div>";
-                                 
-?>
+if(@$can_I_Travel)
+{			
+	echo echo_move_buttons();
+	echo "HP:<span style='border:2px black dotted;border-radius:20%;position:absolute;background-color:#D01;width:10em;height:1em;overflow:hidden;text-align:left;'>".
+		"<span style='border:2px black solid;border-radius:20%;position:absolute;background-color:DarkGreen;height:1em;width:" . (@$_SESSION["userinfo"]["hp"]/$_SESSION["userinfo"]["maxhp"]*10) . "em;text-align:right;'>" . 
+		@$_SESSION["userinfo"]["hp"] . "</span></span>\n<br><br>";
+    echo "MP:<span style='border:2px black dotted;border-radius:20%;position:absolute;background-color:#66F;width:10em;height:1em;overflow:hidden;text-align:left;'>".
+		"<span style='border:2px black solid;border-radius:20%;position:absolute;background-color:blue;height:1em;width:" . (@$_SESSION["userinfo"]["mp"]/$_SESSION["userinfo"]["maxmp"]*10) . "em;text-align:right;'>" . 
+	@$_SESSION["userinfo"]["mp"] . "</span></span>\n<br/>";
+	echo "\n<br/><div class=mmap>Minimap: \n";
+	echo show_map(@$_SESSION["userinfo"]["x"]-3,$_SESSION["userinfo"]["x"]+3,$_SESSION["userinfo"]["y"]-3,$_SESSION["userinfo"]["y"]+3);
+}
+elseif(@!isset($can_I_Travel))
+	echo "<h1>ERROR 47.2 There's been an issue with your sign in.</h1>".
+		"<a href='../../' target='_top'>Go sign in.</a>";
+    echo "\n<br/><form method=post action='#'><button name=traveling type=submit value=reset>Reset Your Coordinates</button></form>\n";
+    echo "\n<br/>\n";
+	echo "<a href=\"javascript:popMap();\">Full Map</a></div>";
+   
+   ?>
 <pre>
 
 
@@ -94,10 +100,10 @@ if($can_I_Travel)
 hi                         </pre><!--This makes sure the hp span doesn't randomnly jump outside the pane-->
 </div>
 
-
+<!-- v.07 visual updates: remove border from Center Pane
 <div class="CenterPaneBorderBottomRight">
 </div>
-
+-->
 <?
 function echo_move_buttons()
 {
@@ -218,7 +224,5 @@ function doall()
 
 }//end doall();
 ?>
-<div id=CPBottom class=CPBottom>
-Bottom
-</div>
+
 </body></html><! End File: CenterPane.php >

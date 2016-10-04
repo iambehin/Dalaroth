@@ -17,7 +17,7 @@ if(isset($_POST['chat']))
 {
 	$chat = htmlspecialchars($_POST['chat'], ENT_QUOTES);
 	if(strlen($chat) > 0)
-		$chat_result = @mysql_query("INSERT INTO chat(time,text,user) VALUES ('" . date('D, M d G:i:s') . "','$chat','" . ucfirst($_SESSION["uname"]) . "')",$db) or die(mysql_error());
+		$chat_result = @mysql_query("INSERT INTO chat(time,text,user) VALUES ('" . date('D, d M y G:i:s') . "','$chat','" . ucfirst($_SESSION["uname"]) . "')",$db) or die(mysql_error());
 }
 $chat_result = @mysql_query("SELECT * FROM chat ORDER BY number DESC",$db);
 $chat_archive = array();

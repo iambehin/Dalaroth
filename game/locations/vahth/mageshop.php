@@ -40,7 +40,7 @@ update_db("gold");
 
 
 
-$train=$_POST["train"];
+@$train=$_POST["train"];
 $class=$_SESSION["userinfo"]["class"];
 if($train == "yes")
 {
@@ -57,7 +57,7 @@ if(is_numeric($train))
 learnspell($train);
 
 ?>
-<br><img height=200 width=200 src="/game/images/Vahth/magehat.png"><br>
+<br><img height=200 width=200 src="/dalaroth/game/images/Vahth/magehat.png"><br>
 <?
 if($class == "fighter")
 echo "Would you like to train in the ways of the mage?<br><form method=POST action=#>

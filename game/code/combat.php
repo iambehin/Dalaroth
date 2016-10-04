@@ -256,9 +256,10 @@ function victory($combat_monster)
 	$_SESSION["userinfo"]["gold"]+=$goldgain;
 	update_db("gold");
 	echo "You now have ".$_SESSION["userinfo"]["gold"]." gold.<br>\n";
-
+	
+	//Vahth Mayor Quest
        if($_SESSION["userinfo"]["vahth_mayor"] == ".5")
-		$_SESSION["userinfo"]["vahth_mayor"]=1;
+		$_SESSION["userinfo"]["vahth_mayor"]="1";
        elseif($_SESSION["userinfo"]["vahth_mayor"] > ".5")
 		$_SESSION["userinfo"]["vahth_mayor"]++;
 	if($_SESSION["userinfo"]["vahth_mayor"] !==0)
@@ -317,7 +318,7 @@ function do_encounter($combat_monster)
            $turn1=monster_turn($combat_monster);
            if($turn1 == 5)
            return null;
-           $combat_monster=player_turn($combat_monster);		
+           $combat_monster=player_turn($combat_monster);
 	} 
 	elseif($combat[0] == 2)//Mage Shield
 	{

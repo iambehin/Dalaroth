@@ -235,6 +235,7 @@ function echo_stats_Settings()
 	Background:
 	<form class=statsDisp name=BGSetting method=POST  action=#>
 		<select name="BGSetting" onChange="backgroundIMG.src = form.BGSetting.options[form.BGSetting.options.selectedIndex].value;">
+			<option value="images/foggy.png">Foggy
 			<option value="images/black.png">Black
 			<option value="images/black_squiggle.png">Black Squiggles
 			<option value="images/yellow_globe.png">Yellow Globe
@@ -286,7 +287,7 @@ function echo_stats_Settings()
 			<option value=Times>Times
 			<option value=Verdana>Verdana
 		</select>
-		<input type=submit value=Submit>
+		<input type=submit value="Submit Font">
 	</form>
 
 <?

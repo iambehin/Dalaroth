@@ -58,7 +58,7 @@ function show_map($_fromx,$_tox,$_fromy,$_toy)
 			{
 				$_trav = explode(",",$row[$_r]["travel"]);
 				$no_ext = substr($row[$_r]["file"],0,strlen($row[$_r]["file"])-4);
-				if($_SESSION["userinfo"]["x"] == $row[$_r]["x"] && $_SESSION["userinfo"]["y"] == $row[$_r]["y"])
+				if(@$_SESSION["userinfo"]["x"] == $row[$_r]["x"] && $_SESSION["userinfo"]["y"] == $row[$_r]["y"])
 					echo "<img border=0 alt=' ' src='".$_mappath."icons/you.png' />\n";
 				elseif(file_exists($_mappath."icons/$no_ext"."ns.png")&&(in_array("n",$_trav) || in_array("s",$_trav)))
 					echo "<img border=0 alt=' ' src='".$_mappath."icons/".$no_ext."ns.png' />\n";

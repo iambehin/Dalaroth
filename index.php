@@ -103,7 +103,7 @@ signin();
 	<meta property="fb:app_id" content="826825444116698"/>
 	<meta property="og:title" content="Dalaroth" />
 	<meta property="og:url" content="http://dalaroth.awardspace.com/" />
-	<meta property="og:image" content="http://dalaroth.awardspace.com/game/images/banner.png" />
+	<meta property="og:image" content="http://dalaroth.awardspace.com/mainHeader.png" />
 
 	<link href="https://plus.google.com/106795922216194347031" rel="publisher" />
 
@@ -166,7 +166,7 @@ google_cpa_choice = ""; // on file
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 end of adsense scripts-->
-<img src="./game/images/frostyBanner.png" alt="Welcome to Dalaroth">
+<img src="mainHeader.png" alt="Welcome to Dalaroth">
 <br/>
 There is an experimental flash version of dalaroth <a href=dalaroth.21>here</a>.
 <br/>
