@@ -1,5 +1,9 @@
 <!-- Begin File: combat.php -->
+<embed src="bgmusic.mp3" autostart="true" loop="true"
+width="400" height="100">
+</embed>
 <?
+
 include "spells.php";
 global $spells_known;
 docombat();

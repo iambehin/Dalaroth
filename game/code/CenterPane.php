@@ -97,7 +97,7 @@ elseif(@!isset($can_I_Travel))
 
 
 
-hi                         </pre><!--This makes sure the hp span doesn't randomnly jump outside the pane-->
+                         </pre><!--This makes sure the hp span doesn't randomnly jump outside the pane-->
 </div>
 
 <!-- v.07 visual updates: remove border from Center Pane

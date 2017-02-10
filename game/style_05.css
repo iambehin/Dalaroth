@@ -253,20 +253,20 @@ display:block;
 
 BUTTON , .StatsPane INPUT {
 margin:0px;
-text-shadow: 0px 0px 1px #fff, 1px 1px 2px #000, 2px 2px 1px #090, -1px -1px 2px blue;
+text-shadow: 0px 0px 1px blue, -0px -0px 1px green;
 /*
 background-color:#661111;
 background: -webkit-radial-gradient(rgba(100,100,100,.6), rgba(0,0,0,0.2));
 */
-background: -webkit-radial-gradient(50%, grey 0%, rgba(0,0,0,0) 90%);
-border:0px;
+background: -webkit-radial-gradient(50%, grey 0%, rgba(0,0,0,0) 30%);
+border:2px;
 color:maroon;
 cursor:url(images/dalarothCur.ico),crosshair;
 
 }
 BUTTON:hover, .StatsPane INPUT:hover {
 text-shadow: 1px 1px 2px blue, -1px -1px 2px green;
-background: -webkit-radial-gradient(50%, rgba(0,0,0,0.25) 0%, grey 90%);
+background: -webkit-radial-gradient(50%, rgba(0,0,0,0.25) 0%, grey 60%);
 border-radius:7px;
 transition: all 2 ease 0s;
 -webkit-transition: all 2 ease 0s;
