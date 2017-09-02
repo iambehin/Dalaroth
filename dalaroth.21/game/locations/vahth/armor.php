@@ -1,1 +1,0 @@
-This is an armor shop ran by Vrell.

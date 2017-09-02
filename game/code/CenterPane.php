@@ -7,7 +7,7 @@ session_start();
 <html>
 	<head>
 	<title>
-You should not see this.
+ERROR This layer goes behind the game
 	</title>
    	<style type="text/css">
 		BODY
@@ -197,7 +197,11 @@ function doall()
 				$can_I_Travel = true;
 				$display_Travel = true;
 				echo travel();
+				echo "<img style='position:relative;border-radius:50px' width=100% src='../images/".$_SESSION["userinfo"]["file"].".jpg'>
+				<div style='padding:15px;text-align:center;position:absolute;margin:auto;top:200px;background-color:rgba(255,255,255,.85);border-radius:50px'>";
 				include "../locations/".$_SESSION["userinfo"]["file"];
+				echo "</div><!--end thisFile-->";
+				
                                  echo "<br/>\n";
 				if($display_Travel)
                                  	echo "\n<br/>You may travel.\n<br/>";

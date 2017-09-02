@@ -9,7 +9,7 @@ session_start();
 //Disabled because awardspace doesn't allow me to set it, but this would set the max load time of the page to 9 seconds:
 //set_time_limit(9);
 global $version;
-$version = ".1"; // 4 Oct 2016
+$version = ".12"; // 2 Sep 17
 
 
 
@@ -229,7 +229,7 @@ function change_()
 	}
 //-->
 	</script>
-   <meta http-equiv="refresh" content="180">
+   <meta http-equiv="refresh" content="900">
 </head>
 <body onload="domenu('statsGeneral');">
 	<?
