@@ -9,7 +9,7 @@ if($dbpassword === crypt($_POST['password'], "behin"))
 ?> 
 You have successfully signed in as <?echo $_SESSION['uname'];?>, welcome!
 <br/>
-<a href="./game/index.php">Enter the Game.</a>
+<a href="./game/index.php">Enter here.</a>
 <br/>
 <form method=post name=signout action="index.php" style="display:inline;">
 <input type=hidden name=page value="signout.php">
