@@ -117,6 +117,7 @@ signin();
 </head>
 <body>
 
+<!-- Facebook insertion code: -->
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -166,6 +167,7 @@ google_cpa_choice = ""; // on file
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 end of adsense scripts-->
+
 <img src="mainHeader.png" alt="Welcome to Dalaroth">
 <br/>
 There is an experimental flash version of dalaroth <a href=dalaroth.21>here</a>.
@@ -194,10 +196,7 @@ For feedback, head over to <a href="http://behinlive.atwebpages.com">DEV Behin's
 <div class="fb-page" data-href="https://www.facebook.com/DalarothGame" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/DalarothGame"><a href="https://www.facebook.com/DalarothGame">Dalaroth</a></blockquote></div></div>
 
 
-
-
 </center>
-
 
 </body>
 </html>
